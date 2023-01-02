@@ -12,6 +12,7 @@ namespace CaixaEletronico
         public string titular;      //declaração de atributos da conta
         public double saldo;
 
+        //método para realizar saques
         public bool Saque(double valor)
         {
             if (this.saldo >= valor)
@@ -24,15 +25,17 @@ namespace CaixaEletronico
                 return false;
             }
 
-        }//método para realizar saques
+        }
 
+        //método para realzar depositos
         public void Deposito(double valor)
         {
             this.saldo += valor;
             Console.WriteLine($"Depósito realizado com sucesso! \nSaldo atual {this.saldo}");
-        } //método para realzar depositos
+        } 
 
-        public void Transferencia(double valor, Conta destino) //metodo 
+        //metodo para realizar transferências
+        public void Transferencia(double valor, Conta destino) 
         {
             if (Saque(valor))
             {
